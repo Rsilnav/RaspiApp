@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import signal
 import json
+import os
 
 from urllib2 import Request, urlopen, URLError
 
@@ -9,10 +10,17 @@ from gi.repository import AppIndicator3 as appindicator
 from gi.repository import Notify as notify
 
 
-APPINDICATOR_ID = 'myappindicator'
+APPINDICATOR_ID = 'RaspiApp'
+
+ip_of_raspberry_pi = 'raspi'
 
 def main():
-    indicator = appindicator.Indicator.new(APPINDICATOR_ID, '/home/rafsill/bin/tempAlert/icon.png', appindicator.IndicatorCategory.SYSTEM_SERVICES)
+    if ip_of_raspberry_pi == '':
+        print "You haven't read Usage! Forgot to change Raspi's IP, check it out in the source code ;)"
+        return
+
+    path = os.path.dirname(os.path.abspath(__file__))
+    indicator = appindicator.Indicator.new(APPINDICATOR_ID, path + '/icon.png', appindicator.IndicatorCategory.SYSTEM_SERVICES)
     indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
     indicator.set_menu(build_menu())
     notify.init(APPINDICATOR_ID)
@@ -37,7 +45,7 @@ def build_menu():
     return menu
 
 def fetch_temp():
-    request = Request('http://raspi:3000')
+    request = Request('http://' + ip_of_raspberry_pi + ':3000')
     response = urlopen(request)
     return response.read()
 

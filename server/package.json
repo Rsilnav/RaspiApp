@@ -1,0 +1,16 @@
+{
+  "name": "RaspiApp-Server",
+  "version": "1.0.0",
+  "description": "Small Express-based API to give temperature to the Ubuntu client.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rsilnav",
+  "license": "MIT License"
+}
+
