@@ -25,24 +25,17 @@ SOFTWARE.
 
 ## Instalation
 ### Server side (Raspberry Pi)
-Copy the 'server' folder into your Raspberry Pi.
-
-Install nodejs and npm.
-
-Use 'npm install' inside 'server' folder.
-
-Use 'node app.js' inside 'server' folder.
-
-Wait for an OK message.
+- Copy the 'server' folder into your Raspberry Pi.
+- Install nodejs and npm.
+- Use 'npm install' inside 'server' folder.
+- Use 'node app.js' inside 'server' folder.
+- Wait for an OK message.
 
 ### Client side (Ubuntu)
-Copy the 'client' folder into your Ubuntu PC.
-
-Install python if you still haven't got it.
-
-Edit 'main.py' and set 'ip_of_raspberry_pi' to whatever you Raspi's IP is.
-
-Give execute permissions to both 'RaspiApp' and 'main.py'.
+- Copy the 'client' folder into your Ubuntu PC.
+- Install python if you still haven't got it.
+- Edit 'main.py' and set 'ip_of_raspberry_pi' to whatever you Raspi's IP is.
+- Give execute permissions to both 'RaspiApp' and 'main.py'.
 
 ## Usage
 You can launch it in three different ways:
@@ -52,7 +45,6 @@ You can launch it in three different ways:
 - ./RaspApp
 
 Only the last one brings you back a free console.
-
 To check the Raspberry temperature, just click on the icon and select 'Temperatura'.
 
 Click 'Salir' to close the tray icon.
